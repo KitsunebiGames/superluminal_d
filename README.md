@@ -16,7 +16,6 @@ void main() {
     PerformanceAPI_Functions perfApi;
     auto module_ = loadAPIFrom("PerformanceAPI.dll", &perfAPI);
 
-
     // Add instrumentation event
     {
         perfAPI.beginEvent("My Event", null, PERFORMANCEAPI_DEFAULT_COLOR);
@@ -25,6 +24,9 @@ void main() {
 
         perfAPI.endEvent();
     }
+
+    // You can unload the API after you're done using it.
+    unloadAPI(module_);
 }
 
 ```
