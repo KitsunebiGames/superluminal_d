@@ -82,17 +82,21 @@ enum PERFORMANCEAPI_VERSION = ((PERFORMANCEAPI_MAJOR_VERSION << 16) | PERFORMANC
 
 
 /**
-    Helper function to create an uint color from 3 RGB values. The R, G and B values must be in range [0, 255].
+    Helper enum to create an uint color from 3 RGB values. The R, G and B values must be in range [0, 255].
     The resulting color can be passed to the BeginEvent function.
 */
-enum PERFORMANCEAPI_MAKE_COLOR(ubyte R, ubyte G, ubyte B) = (
+enum uint PERFORMANCEAPI_MAKE_COLOR(ubyte R, ubyte G, ubyte B) = (
     (cast(uint)R << 24) | 
     (cast(uint)G << 16) | 
     (cast(uint)B << 8) | 
     cast(uint)0xFF
 );
 
-enum PERFORMANCEAPI_MAKE_COLOR(ubyte R, ubyte G, ubyte B, ubyte A) = (
+/**
+    Helper enum to create an uint color from 4 RGBA values. The R, G and B and A values must be in range [0, 255].
+    The resulting color can be passed to the BeginEvent function.
+*/
+enum uint PERFORMANCEAPI_MAKE_COLOR_ALPHA(ubyte R, ubyte G, ubyte B, ubyte A) = (
     (cast(uint)R << 24) | 
     (cast(uint)G << 16) | 
     (cast(uint)B << 8) | 
