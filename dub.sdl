@@ -13,12 +13,12 @@ configuration "dynamic" {
 configuration "static_dynamicRT" {
     targetType "library"
     libs "PerformanceAPI_MD.lib"
-    versions "EnablePerfAPI"
+    versions "EnablePerfAPI" "SuperluminalStatic"
 }
 
 // Static configuration with static runtime
 configuration "static_staticRT" {
     targetType "library"
     libs "PerformanceAPI_MT.lib"
-    versions "EnablePerfAPI"
+    versions "EnablePerfAPI" "SuperluminalStatic"
 }

@@ -65,6 +65,9 @@ import core.sys.windows.windef : HMODULE;
 version(EnablePerformanceAPI) enum EnablePerfAPI = true;
 else enum EnablePerfAPI = false;
 
+version(SuperluminalStatic) enum PerfAPIStatic = true;
+else enum PerfAPIStatic = false;
+
 version(Windows) {
     enum PERFORMANCEAPI_ENABLED = EnablePerfAPI;
     alias ModuleHandle = HMODULE;
@@ -111,8 +114,7 @@ struct PerformanceAPI_SuppressTailCallOptimization {
 
 extern(C) @nogc nothrow:
 
-static if (PERFORMANCEAPI_ENABLED) {
-
+static if (PERFORMANCEAPI_ENABLED && PerfAPIStatic) {
 	/**
 	    Set the name of the current thread to the specified thread name. 
 
