@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/superluminal_d
+superluminal_d.so
+superluminal_d.dylib
+superluminal_d.dll
+superluminal_d.a
+superluminal_d.lib
+superluminal_d-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

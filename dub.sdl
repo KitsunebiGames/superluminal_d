@@ -1,0 +1,24 @@
+name "superluminal_d"
+description "D bindings to the Superluminal Performance API"
+authors "Kitsunebi Games"
+copyright "Copyright © 2024, Kitsunebi Games"
+license "BSD 2-clause"
+
+// Dynamic configuration
+configuration "dynamic" {
+    targetType "library"
+}
+
+// Static configuration with dynamic runtime
+configuration "static_dynamicRT" {
+    targetType "library"
+    libs "PerformanceAPI_MD.lib"
+    versions "EnablePerfAPI"
+}
+
+// Static configuration with static runtime
+configuration "static_staticRT" {
+    targetType "library"
+    libs "PerformanceAPI_MT.lib"
+    versions "EnablePerfAPI"
+}
